@@ -8,6 +8,34 @@ from dotenv import load_dotenv
 from datetime import datetime, timedelta
 import certifi
 
+
+if 'terms_accepted' not in st.session_state:
+    st.session_state.terms_accepted = False
+
+if not st.session_state.terms_accepted:
+    st.title("AgentX | Legal Documentation & Disclosure")
+    st.warning("### Terms and Conditions of Autonomous Operation")
+    
+    st.markdown("""
+    By proceeding to use the **AgentX Orchestrator**, you acknowledge and agree to the following:
+    
+    1. **Advisory Nature:** AgentX is an AI-driven tool powered by Large Language Models. All decisions, engineer assignments, and technical fixes are *suggestions* generated through probabilistic reasoning.
+    2. **Liability Limitation:** The developers of AgentX shall not be held liable for any financial loss, service downtime, or security breaches resulting from the autonomous decisions made by the agent.
+    3. **Human-in-the-Loop:** It is the responsibility of the organization to maintain human oversight. The "Refuse" and "Solved" buttons are provided to ensure human control over AI logic.
+    4. **Data Privacy:** Incident data is processed via third-party APIs (Google Gemini). Ensure no highly sensitive or unencrypted credentials are typed into the incident description.
+    """)
+    
+    col1, col2 = st.columns([1, 5])
+    with col1:
+        if st.button("I Accept"):
+            st.session_state.terms_accepted = True
+            st.rerun()
+    with col2:
+        if st.button("Decline"):
+            st.error("Access Denied. You must accept the terms to operate the Autonomous Agent.")
+            st.stop()
+    st.stop()
+
 ca = certifi.where()
 load_dotenv()
 
@@ -142,7 +170,6 @@ for ticket in active_tickets:
         send_slack_notification(new_res, ticket['issue'])
         st.rerun()
 
-# --- WORKFORCE STATUS ---
 st.divider()
 st.subheader("Workforce Status")
 try:
