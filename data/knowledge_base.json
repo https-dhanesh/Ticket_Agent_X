@@ -1,0 +1,37 @@
+[
+  {
+    "id": "KB001",
+    "category": "Network",
+    "issue": "VPN Connection Failed",
+    "symptoms": ["GlobalProtect stuck on connecting", "Authentication failed error", "Cannot access internal servers"],
+    "solution": "1. Ensure you are on a stable internet connection. 2. Restart the GlobalProtect service in Task Manager. 3. Check if your MFA (Multi-Factor Authentication) token has expired. 4. Flush DNS using 'ipconfig /flushdns' in terminal."
+  },
+  {
+    "id": "KB002",
+    "category": "Access",
+    "issue": "Account Locked / Password Reset",
+    "symptoms": ["Invalid credentials error", "Too many failed attempts", "Expired password"],
+    "solution": "1. Go to the Self-Service Password Reset (SSPR) portal. 2. Verify identity via registered mobile or email. 3. Set a new password (min 12 chars, 1 special char). 4. Wait 5 minutes for synchronization before logging in again."
+  },
+  {
+    "id": "KB003",
+    "category": "Software",
+    "issue": "Outlook/Email Synchronization Issue",
+    "symptoms": ["Not receiving new emails", "Outlook stuck in 'Offline' mode", "Folders not updating"],
+    "solution": "1. Check internet connectivity. 2. Go to the 'Send/Receive' tab and click 'Work Offline' to toggle it off. 3. Repair the Outlook Profile: File > Account Settings > Repair. 4. Clear Outlook cache in %localappdata%\\Microsoft\\Outlook."
+  },
+  {
+    "id": "KB004",
+    "category": "Security",
+    "issue": "Suspected Phishing or Malware",
+    "symptoms": ["Suspicious email from unknown sender", "Slow system performance", "Pop-ups", "Unauthorized file changes"],
+    "solution": "1. DO NOT click any links or download attachments. 2. Forward the email as an attachment to 'security-alerts@company.com'. 3. Run a full scan using Windows Defender or CrowdStrike. 4. Disconnect from the network if unauthorized activity is observed."
+  },
+  {
+    "id": "KB005",
+    "category": "Hardware",
+    "issue": "Peripheral/Monitor Connectivity",
+    "symptoms": ["Second monitor not detected", "Keyboard/Mouse not responding", "USB device unrecognized"],
+    "solution": "1. Re-seat the HDMI/DisplayPort/USB cables. 2. Update Display Drivers via Device Manager. 3. Try a different port on the docking station. 4. Power cycle the monitor (unplug power for 30 seconds)."
+  }
+]
