@@ -29,7 +29,7 @@
 
 1. **Clone the repository:**
    ```bash
-   git clone [https://github.com/yourusername/AgentX.git](https://github.com/yourusername/AgentX.git)
+   git clone [https://github.com/https-dhanesh/Ticket_Agent_X.git](https://github.com/https-dhanesh/Ticket_Agent_X.git)
    cd AgentX
    ```
 
